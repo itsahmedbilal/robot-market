@@ -30,14 +30,7 @@ export default {
 }
 </script>
 
-<style>
-body {
-  background: linear-gradient(to bottom, #555, #999) fixed;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
+<style scoped>
 main {
   margin: 0 auto;
   padding: 30px;
@@ -68,5 +61,14 @@ ul {
 .logo {
   vertical-align: middle;
   height: 30px;
+}
+</style>
+
+<style>
+body {
+  background: linear-gradient(to bottom, #555, #999) fixed;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>
