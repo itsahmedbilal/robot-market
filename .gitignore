@@ -1,0 +1,6 @@
+#IDE Configs
+.idea
+.vscode
+
+#node modules
+node_modules
