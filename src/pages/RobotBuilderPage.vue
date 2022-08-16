@@ -2,7 +2,7 @@
   <div class="content">
     <button class="add-to-cart" @click="addToCart()">Add To Card</button>
     <div class="top-row">
-      <div class="top part">
+      <div class="top part" :style="headBorderStyle">
         <div class="robot-name">
           {{ selectedRobot.head.title }}
           <span v-if="selectedRobot.head.onSale" class="sale">Sale...!</span>
@@ -47,8 +47,8 @@
         </thead>
         <tbody>
         <tr v-for="(robot, index) in cart" :key="index">
-          <th>{{robot.head.title}}</th>
-          <th class="cost">{{robot.head.cost}}</th>
+          <th>{{ robot.head.title }}</th>
+          <th class="cost">{{ robot.head.cost }}</th>
         </tr>
         <tr style="color: red" v-if="!cart.length">Empty Cart</tr>
         </tbody>
@@ -84,6 +84,9 @@ export default {
   },
 
   computed: {
+    headBorderStyle() {
+      return {border : '3px sold red'}
+    },
     selectedRobot() {
       return {
         head: this.availableParts.heads[this.headIndex],
@@ -290,11 +293,13 @@ export default {
   padding: 3px;
   font-size: 16px;
 }
+
 td, th {
   text-align: left;
   padding: 5px;
   padding-right: 20px;
 }
+
 .cost {
   text-align: right;
 }
